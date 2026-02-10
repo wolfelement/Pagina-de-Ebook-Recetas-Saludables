@@ -3,18 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>100 Recetas Ricas y Saludables para la Diabetes</title>
+    <title>100 Recetas Saludables para Diabetes - Pack Premium 2026</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap");
+
       :root {
-        --primary-color: #4caf50;
-        --secondary-color: #f9fbf9;
-        --accent-color: #ff7043;
-        --urgent-bg: #fff1f0;
-        --urgent-text: #e53935;
-        --text-dark: #2c3e50;
-        --text-light: #546e7a;
-        --bg-pastel: #fffcf9;
+        --primary: #1b4332;
+        --primary-main: #2d6a4f;
+        --primary-soft: #d8f3dc;
+        --secondary: #ffb703;
+        --accent: #ff7043;
+        --accent-dark: #e64a19;
+        --text: #1e293b;
+        --text-light: #64748b;
         --white: #ffffff;
+        --bg: #fdfcf4;
+        --radius-xl: 40px;
+        --radius-lg: 24px;
+        --shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08);
       }
 
       * {
@@ -24,342 +30,488 @@
       }
 
       body {
-        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: "Plus Jakarta Sans", sans-serif;
         line-height: 1.6;
-        color: var(--text-dark);
-        background-color: var(--bg-pastel);
+        color: var(--text);
+        background-color: var(--bg);
+        overflow-x: hidden;
       }
 
-      /* Banner de Oferta Relámpago */
+      h1,
+      h2,
+      h3 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      /* Barra de Urgencia */
       .lightning-banner {
-        background-color: var(--urgent-bg);
-        color: var(--urgent-text);
-        padding: 15px 20px;
+        background: linear-gradient(90deg, #ef4444 0%, #b91c1c 100%);
+        color: var(--white);
+        padding: 14px 20px;
         text-align: center;
-        border-bottom: 2px solid #ffdde1;
         position: sticky;
         top: 0;
         z-index: 1000;
-        font-weight: bold;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        font-weight: 700;
+        box-shadow: 0 4px 15px rgba(185, 28, 28, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.9rem;
       }
 
       .timer-display {
-        font-size: 1.4rem;
-        display: inline-block;
-        background: var(--white);
-        padding: 2px 12px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 4px 12px;
         border-radius: 8px;
-        margin-left: 10px;
-        border: 1px solid #ffcdd2;
-        min-width: 80px;
+        font-family: monospace;
+        font-size: 1.1rem;
+        border: 1px solid rgba(255, 255, 255, 0.4);
       }
 
       .container {
-        max-width: 1200px;
+        max-width: 1140px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 24px;
       }
 
+      /* Hero Section */
       header {
-        background-color: var(--white);
-        padding: 40px 0;
+        padding: 80px 0 60px;
         text-align: center;
-        border-bottom: 2px solid var(--secondary-color);
+        position: relative;
+        background: radial-gradient(
+          circle at 10% 20%,
+          rgba(216, 243, 220, 0.4) 0%,
+          transparent 40%
+        );
+      }
+
+      .promo-badge {
+        background: var(--primary-soft);
+        color: var(--primary-main);
+        padding: 8px 24px;
+        border-radius: 100px;
+        font-weight: 800;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 24px;
+        border: 1px solid var(--primary-main);
       }
 
       h1 {
-        font-size: 2.5rem;
-        color: var(--primary-color);
-        margin-bottom: 20px;
-        line-height: 1.2;
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        color: var(--primary);
+        margin-bottom: 24px;
+        letter-spacing: -2px;
+      }
+
+      h1 span {
+        color: var(--accent);
+      }
+
+      .hero-desc {
+        font-size: 1.35rem;
+        color: var(--text-light);
+        max-width: 800px;
+        margin: 0 auto 48px;
+        font-weight: 500;
+      }
+
+      .main-mockup {
+        max-width: 850px;
+        margin: 0 auto;
+        background: var(--white);
+        padding: 12px;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .main-mockup:hover {
+        transform: scale(1.02);
+      }
+
+      .main-mockup img {
+        width: 100%;
+        border-radius: 30px;
+        display: block;
+      }
+
+      /* Secciones Dinámicas */
+      section {
+        padding: 50px 0;
+      }
+      .bg-white {
+        background: var(--white);
+      }
+      .bg-pastel {
+        background: var(--bg);
       }
 
       h2 {
-        font-size: 2rem;
-        color: var(--primary-color);
-        margin-bottom: 20px;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
         text-align: center;
+        margin-bottom: 50px;
+        color: var(--primary);
+        letter-spacing: -1px;
       }
 
-      .hero-sub {
-        font-size: 1.25rem;
-        color: var(--text-light);
-        max-width: 800px;
-        margin: 0 auto 30px;
-      }
-
-      .vsl-placeholder {
-        background-color: #e0e0e0;
-        width: 100%;
-        max-width: 800px;
-        aspect-ratio: 16 / 9;
-        margin: 0 auto 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        overflow: hidden;
-        position: relative;
-      }
-
-      .vsl-placeholder img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      .bg-white {
-        background-color: var(--white);
-      }
-      .bg-pastel {
-        background-color: var(--secondary-color);
-      }
-
-      .cta-box {
-        text-align: center;
-        padding: 40px;
-        background-color: var(--white);
-        border: 3px dashed var(--primary-color);
-        border-radius: 15px;
-        margin: 40px 0;
-      }
-
-      .btn-cta {
-        display: inline-block;
-        background-color: var(--accent-color);
-        color: var(--white);
-        padding: 20px 40px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 50px;
-        box-shadow: 0 4px 15px rgba(255, 112, 67, 0.4);
-        transition:
-          transform 0.2s,
-          background-color 0.2s;
-        margin-top: 20px;
-      }
-
-      .btn-cta:hover {
-        transform: scale(1.05);
-        background-color: #f4511e;
-      }
-
-      .benefit-grid {
+      /* Beneficios Grid */
+      .benefits-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
-        margin-top: 40px;
+        margin-bottom: 60px;
       }
 
-      .benefit-item {
+      .benefit-card {
+        background: var(--bg);
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .benefit-card:hover {
         background: var(--white);
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
-        border-left: 5px solid var(--primary-color);
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+        border-color: var(--primary-soft);
       }
 
-      .benefit-item h3 {
-        color: var(--primary-color);
-        margin-bottom: 15px;
-      }
-
-      .testimonial-container {
+      .icon-box {
+        width: 70px;
+        height: 70px;
+        background: var(--white);
+        border-radius: 20px;
         display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
+        align-items: center;
         justify-content: center;
+        font-size: 2.5rem;
+        margin: 0 auto 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      /* BONO PREMIUM */
+      .bonus-container {
+        background: linear-gradient(135deg, #fffdf2 0%, #fff9c4 100%);
+        border: 2px solid var(--secondary);
+        border-radius: var(--radius-xl);
+        padding: clamp(30px, 5vw, 60px);
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin: 40px 0;
+        position: relative;
+        box-shadow: 0 30px 60px -20px rgba(255, 183, 3, 0.3);
+      }
+
+      .bonus-badge {
+        background: var(--accent);
+        color: white;
+        padding: 6px 16px;
+        border-radius: 8px;
+        font-weight: 800;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+
+      .bonus-text {
+        flex: 1;
+      }
+      .bonus-text h3 {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+        color: #856404;
+      }
+
+      .bonus-visual {
+        flex: 0 0 280px;
+        background: var(--white);
+        padding: 12px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        transform: rotate(3deg);
+      }
+      .bonus-visual img {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      /* Botón de Acción */
+      .cta-wrapper {
+        text-align: center;
+        margin: 40px 0;
+      }
+      .btn-mega {
+        background: var(--accent);
+        color: var(--white);
+        padding: 24px 48px;
+        border-radius: 20px;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        font-weight: 800;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 20px 40px -10px rgba(255, 112, 67, 0.4);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-bottom: 6px solid var(--accent-dark);
+        text-transform: uppercase;
+      }
+
+      .btn-mega:hover {
+        transform: translateY(-5px);
+        background: #ff8a65;
+        box-shadow: 0 30px 60px -10px rgba(255, 112, 67, 0.5);
+      }
+
+      /* Testimonios Gmail */
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
       }
 
       .testimonial-card {
         background: var(--white);
-        padding: 25px;
-        border-radius: 15px;
-        width: 100%;
-        max-width: 350px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        border: 1px solid #f1f5f9;
       }
 
-      .testimonial-img {
-        width: 60px;
-        height: 60px;
+      .user-info {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .gmail-avatar {
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        margin-bottom: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        font-weight: bold;
-        font-size: 1.2rem;
-        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 1.1rem;
       }
 
-      .pricing-table {
+      /* Pricing Section */
+      .pricing-box {
         max-width: 500px;
         margin: 0 auto;
         text-align: center;
-        padding: 40px;
-        border: 2px solid var(--primary-color);
-        border-radius: 20px;
+        padding: 50px;
+        border-radius: 40px;
         background: var(--white);
+        box-shadow: var(--shadow);
+        border: 2px solid var(--primary-soft);
       }
 
       .old-price {
         text-decoration: line-through;
-        color: #999;
-        font-size: 1.2rem;
+        color: #94a3b8;
+        font-size: 1.5rem;
       }
-
       .new-price {
-        font-size: 3.5rem;
-        color: var(--text-dark);
-        font-weight: bold;
-        display: block;
+        font-size: clamp(3.5rem, 8vw, 5.5rem);
+        font-weight: 900;
+        color: var(--primary-main);
+        line-height: 1;
         margin: 10px 0;
       }
 
+      /* Compromiso de Calidad */
       .guarantee-box {
+        background: #f8fafc;
+        color: var(--text);
+        border-radius: var(--radius-xl);
+        padding: clamp(30px, 5vw, 60px);
         display: flex;
         align-items: center;
-        gap: 30px;
-        max-width: 800px;
-        margin: 0 auto;
-        background: #fff8f0;
-        padding: 30px;
-        border-radius: 15px;
+        gap: 40px;
+        margin: 60px auto;
+        border: 2px solid var(--primary-soft);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        max-width: 1000px;
       }
 
+      .seal-icon {
+        font-size: 5rem;
+        line-height: 1;
+      }
+      .guarantee-box h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: var(--primary-main);
+      }
+      .guarantee-box p {
+        font-size: 1.15rem;
+        color: var(--text-light);
+      }
+
+      /* FAQ List */
+      .faq-list {
+        max-width: 850px;
+        margin: 40px auto 0;
+      }
       .faq-item {
-        margin-bottom: 20px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 20px;
+        background: var(--white);
+        margin-bottom: 15px;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        border: 1px solid #f1f5f9;
       }
-
       .faq-item h4 {
-        margin-bottom: 10px;
-        color: var(--text-dark);
+        color: var(--primary-main);
+        margin-bottom: 8px;
       }
 
+      /* Footer */
       footer {
-        background: var(--text-dark);
-        color: var(--white);
-        padding: 40px 0;
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 80px 0 40px;
         text-align: center;
       }
 
-      .badge {
-        display: inline-block;
-        background: var(--primary-color);
-        color: white;
-        padding: 5px 15px;
-        border-radius: 5px;
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        font-weight: bold;
+      .brand-name {
+        color: var(--white);
+        font-weight: 800;
+        font-size: 1.8rem;
+        margin-bottom: 24px;
       }
 
       @media (max-width: 768px) {
-        h1 {
-          font-size: 1.8rem;
+        .bonus-container {
+          flex-direction: column;
+          text-align: center;
         }
-        h2 {
-          font-size: 1.5rem;
-        }
-        .btn-cta {
-          font-size: 1.1rem;
+        .bonus-visual {
+          flex: 0 0 auto;
           width: 100%;
-          padding: 15px;
+          max-width: 220px;
         }
         .guarantee-box {
           flex-direction: column;
           text-align: center;
+          padding: 30px;
         }
-        .lightning-banner {
-          font-size: 0.9rem;
-        }
-        .timer-display {
-          font-size: 1.1rem;
+        .new-price {
+          font-size: 3.8rem;
         }
       }
     </style>
   </head>
   <body>
+    <!-- Barra Urgente -->
     <div class="lightning-banner">
-      ⚡ ¡OFERTA RELÁMPAGO ACTIVADA! Tu descuento especial del 50% expira en:
-      <span class="timer-display" id="timer">10:00</span>
+      <span>🔥 ¡OFERTA RELÁMPAGO: DESCUENTO + BONO GRATIS EXPIRAN EN:</span>
+      <div class="timer-display" id="timer">10:00</div>
     </div>
 
-    <header>
-      <div class="container">
-        <span class="badge">Nueva Guía 2026 - Basada en ADA</span>
-        <h1>¿Cansado de elegir entre tu salud y el placer de comer?</h1>
-        <p class="hero-sub">
-          Descubre cómo mantener tus niveles de azúcar estables disfrutando de
-          100 recetas deliciosas, fáciles y económicas diseñadas para tu
-          bienestar.
-        </p>
+    <header class="container">
+      <span class="promo-badge">Edición Premium 2026 - Avalada ADA</span>
+      <h1>Domina tu Diabetes y <span>Redescubre</span> el Placer de Comer</h1>
+      <p class="hero-desc">
+        Más que un recetario, es tu guía definitiva para vivir con salud y
+        energía estable, disfrutando de 100 recetas diseñadas para tu bienestar.
+      </p>
 
-        <!-- VSL / Main Image Placeholder -->
-        <div class="vsl-placeholder">
-          <img
-            src="https://i.ibb.co/23Gdd1TT/Image-202602082227.jpg"
-            alt="Recetas Saludables para Diabetes"
-          />
-        </div>
+      <div class="main-mockup">
+        <img
+          src="https://i.ibb.co/23Gdd1TT/Image-202602082227.jpg"
+          alt="Libro Control Diabetes"
+        />
       </div>
     </header>
 
     <!-- 1. ¿Qué vendes? & 2. ¿Qué hace por mí? -->
     <section class="bg-white">
       <div class="container">
-        <h2>Un acompañante diario que te llevará del sacrificio al disfrute</h2>
-        <p style="text-align: center; max-width: 900px; margin: 0 auto">
+        <h2>Un acompañante diario hacia tu libertad</h2>
+        <p
+          style="
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+          "
+        >
           Te presento el Ebook
           <strong
             >“100 Recetas Ricas y Saludables para controlar la Diabetes”</strong
-          >. No es solo un libro de cocina; es la herramienta definitiva para
-          recuperar el control de tu vida sin renunciar al sabor de tus platos
-          favoritos.
+          >. Esta guía no solo estabiliza tu azúcar, sino que te devuelve la
+          alegría de sentarte a la mesa.
         </p>
 
-        <div class="benefit-grid">
-          <div class="benefit-item">
-            <h3>Sabor sin Picos de Azúcar</h3>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="icon-box">🥗</div>
+            <h3>Sabor sin Riesgos</h3>
             <p>
               Recetas deliciosas con bajo índice glucémico que mantienen tus
-              niveles estables sin perder el placer de comer.
+              niveles estables sin perder el placer.
             </p>
           </div>
-          <div class="benefit-item">
+          <div class="benefit-card">
+            <div class="icon-box">📊</div>
             <h3>Claridad Total</h3>
             <p>
-              Porciones exactas y conteo de carbohidratos en cada receta para
-              que planifiques tus comidas con total confianza.
+              Porciones exactas y conteo de carbohidratos en cada plato para que
+              cocines con total confianza.
             </p>
           </div>
-          <div class="benefit-item">
+          <div class="benefit-card">
+            <div class="icon-box">🛒</div>
             <h3>Simplicidad Real</h3>
             <p>
-              Ingredientes accesibles que encuentras en tu mercado local. Sin
-              productos "mágicos" ni gastos excesivos.
+              Ingredientes accesibles que encuentras en cualquier mercado local.
+              Sin gastos excesivos.
             </p>
           </div>
         </div>
 
-        <div class="cta-box">
-          <p><strong>Transforma tu alimentación hoy mismo.</strong></p>
+        <!-- Bono -->
+        <div class="bonus-container">
+          <div class="bonus-text">
+            <span class="bonus-badge">🎁 REGALO EXCLUSIVO HOY</span>
+            <h3>BONO: "7 Días para Resetear tu Metabolismo"</h3>
+            <p style="font-size: 1.15rem; color: #475569">
+              Al adquirir tu libro hoy, recibirás completamente
+              <strong>GRATIS</strong> esta guía intensiva diseñada para
+              despertar tu metabolismo y mejorar tu absorción de nutrientes.
+            </p>
+            <p style="margin-top: 15px; font-weight: 800; color: #e53935">
+              Valorado en: $15 USD —
+              <span style="color: var(--primary-main)">Hoy: $0.00 USD</span>
+            </p>
+          </div>
+          <div class="bonus-visual">
+            <img
+              src="https://i.ibb.co/yc1DZZ0M/METABOLISMO1.jpg"
+              alt="Bono Metabolismo"
+            />
+          </div>
+        </div>
+
+        <div class="cta-wrapper">
           <a
             href="https://pay.hotmart.com/A104346468O?bid=1770606654709"
-            class="btn-cta"
-            >¡SÍ! QUIERO LAS RECETAS AHORA</a
+            class="btn-mega"
+            >¡SÍ! QUIERO MI PACK SALUDABLE AHORA</a
           >
         </div>
       </div>
@@ -368,9 +520,21 @@
     <!-- 3. ¿Por qué debería creerte? -->
     <section class="bg-pastel">
       <div class="container">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center">
-          <h2>Ciencia y sabor de la mano</h2>
-          <p>
+        <div
+          style="
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            border: 2px dashed var(--primary-main);
+          "
+        >
+          <div style="font-size: 3rem; margin-bottom: 20px">🔬</div>
+          <h2 style="margin-bottom: 20px">Ciencia y sabor de la mano</h2>
+          <p style="font-size: 1.2rem; color: #475569">
             Cada una de estas 100 recetas ha sido desarrollada siguiendo
             rigurosamente las guías de la
             <strong>Asociación Americana de Diabetes (ADA)</strong>. No
@@ -384,234 +548,185 @@
     <!-- 4. ¿Quién más lo dice? -->
     <section class="bg-white">
       <div class="container">
-        <h2>Lo que dicen quienes ya están disfrutando</h2>
-        <div class="testimonial-container">
+        <h2>Voces de Transformación Real</h2>
+        <div class="testimonial-grid">
           <div class="testimonial-card">
-            <div class="testimonial-img" style="background-color: #7e57c2">
-              MG
+            <div class="user-info">
+              <div class="gmail-avatar" style="background: #7e57c2">MG</div>
+              <strong>María González</strong>
             </div>
             <p>
               "Pensé que nunca volvería a disfrutar de un postre. Las
               alternativas de este libro me cambiaron la vida. ¡Mis niveles de
               azúcar no se movieron!"
             </p>
-            <p><strong>- María G.</strong></p>
           </div>
           <div class="testimonial-card">
-            <div class="testimonial-img" style="background-color: #42a5f5">
-              JP
+            <div class="user-info">
+              <div class="gmail-avatar" style="background: #42a5f5">JP</div>
+              <strong>Juan Pérez</strong>
             </div>
             <p>
-              "Como alguien que no sabe cocinar mucho, los menús listos para
-              imprimir me salvaron la semana. Recetas rápidas y realmente
-              ricas."
+              "Como alguien que no sabe cocinar mucho, los menús me salvaron la
+              semana. Recetas rápidas y realmente ricas."
             </p>
-            <p><strong>- Juan P.</strong></p>
           </div>
           <div class="testimonial-card">
-            <div class="testimonial-img" style="background-color: #ff7043">
-              ER
+            <div class="user-info">
+              <div class="gmail-avatar" style="background: #ff7043">ER</div>
+              <strong>Elena Rodríguez</strong>
             </div>
             <p>
               "Por fin un libro que entiende que no todos tenemos acceso a
               ingredientes caros. Sencillo, práctico y muy efectivo."
             </p>
-            <p><strong>- Elena R.</strong></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. ¿Qué obtengo exactamente? -->
-    <section class="bg-pastel">
-      <div class="container">
-        <h2>Todo lo que recibirás hoy:</h2>
-        <ul style="list-style: none; max-width: 700px; margin: 0 auto">
-          <li style="margin-bottom: 15px">
-            ✅ <strong>100 Recetas paso a paso:</strong> Desde desayunos
-            energéticos hasta cenas ligeras y postres permitidos.
-          </li>
-          <li style="margin-bottom: 15px">
-            ✅ <strong>Alternativas para todo:</strong> Opciones con/sin horno,
-            vegetarianas y versiones exprés para días ocupados.
-          </li>
-          <li style="margin-bottom: 15px">
-            ✅ <strong>Menús Semanales:</strong> Listos para imprimir y pegar en
-            tu nevera.
-          </li>
-          <li style="margin-bottom: 15px">
-            ✅ <strong>Guía de Compras Inteligente:</strong> Tips para ahorrar y
-            almacenar tus alimentos manteniendo sus beneficios.
-          </li>
-          <li style="margin-bottom: 15px">
-            ✅ <strong>Conteo Nutricional:</strong> Calorías, carbohidratos,
-            grasas y proteínas detallados por porción.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 6. ¿Cuánto cuesta? & 7. ¿Cómo lo pago? -->
+    <!-- 6. & 7. Pricing -->
     <section class="bg-white" id="precio">
       <div class="container">
-        <div class="pricing-table">
-          <h3>Oferta de Lanzamiento</h3>
-          <p>
-            El valor real de esta guía y los menús es de
-            <span class="old-price">$10 USD</span>
+        <div class="pricing-box">
+          <span
+            style="font-weight: 800; color: var(--accent); letter-spacing: 1px"
+            >OFERTA DE LANZAMIENTO (2 EN 1)</span
+          >
+          <p style="margin: 15px 0; color: var(--text-light)">
+            100 Recetas Diabetes + Bono Reset Metabolismo
           </p>
-          <p>Pero hoy, puedes obtenerlo por solo:</p>
-          <span class="new-price">$4.99 USD</span>
-          <p><small>Pago único. Sin suscripciones mensuales.</small></p>
+          <div style="margin: 24px 0">
+            <span class="old-price">$10.00 USD</span>
+            <div class="new-price">$4.99</div>
+          </div>
+          <ul
+            style="
+              list-style: none;
+              text-align: left;
+              margin: 30px 0;
+              padding-left: 0;
+              color: var(--text-light);
+              font-weight: 600;
+            "
+          >
+            <li style="margin-bottom: 12px">✅ Ebook 100 Recetas Saludables</li>
+            <li style="margin-bottom: 12px">✅ Guía de Porciones y Conteo</li>
+            <li style="margin-bottom: 12px">
+              ✅ <strong>BONO GRATIS:</strong> 7 Días Reset Metabolismo
+            </li>
+            <li style="margin-bottom: 12px">✅ Acceso inmediato de por vida</li>
+          </ul>
           <a
             href="https://pay.hotmart.com/A104346468O?bid=1770606654709"
-            class="btn-cta"
-            >DESCARGAR EBOOK AHORA</a
+            class="btn-mega"
+            style="width: 100%; padding: 24px"
+            >¡DESCARGAR PACK COMPLETO!</a
           >
-          <div style="margin-top: 20px">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-              width="60"
-              alt="Paypal"
-            />
-            <p style="font-size: 0.8rem; color: #777">
-              Pago seguro procesado por Stripe/Hotmart/Paypal
-            </p>
-          </div>
+          <p style="margin-top: 15px; font-size: 0.85rem; color: #94a3b8">
+            🔒 Compra Segura Protegida por Hotmart
+          </p>
         </div>
-      </div>
-    </section>
 
-    <!-- 8. Compromiso de Calidad Superior -->
-    <section class="bg-pastel">
-      <div class="container">
+        <!-- 8. Compromiso de Calidad Superior (Independent) -->
         <div class="guarantee-box">
-          <div style="font-size: 4rem">⭐</div>
-          <div>
+          <div class="seal-icon">🛡️</div>
+          <div class="quality-text">
             <h3>Compromiso de Calidad Superior</h3>
             <p>
               Tu bienestar merece lo mejor. Cada una de estas 100 recetas ha
               sido meticulosamente seleccionada y revisada para garantizar que
               cumpla con los estándares nutricionales de la
-              <strong>Asociación Americana de Diabetes (ADA)</strong>. Al
-              adquirir este Ebook hoy, recibes un recurso premium, diseñado para
-              ser tu guía definitiva desde el primer día, asegurando un
-              equilibrio perfecto entre salud y sabor sin errores ni
-              complicaciones.
+              <strong>ADA</strong>. Al adquirir este Ebook hoy, recibes un
+              recurso premium diseñado para ser tu guía definitiva desde el
+              primer día.
             </p>
           </div>
-        </div>
-        <div class="cta-box" style="border-color: var(--accent-color)">
-          <p>
-            <strong
-              >Recibe tu guía premium al instante y comienza a comer rico hoy
-              mismo.</strong
-            >
-          </p>
-          <a
-            href="https://pay.hotmart.com/A104346468O?bid=1770606654709"
-            class="btn-cta"
-            >QUIERO MI COPIA AHORA</a
-          >
         </div>
       </div>
     </section>
 
-    <!-- 9. ¿Qué pasa si espero o no compro? -->
+    <!-- FAQ -->
     <section class="bg-white">
       <div class="container">
-        <div style="max-width: 800px; margin: 0 auto">
-          <h2>
-            ¿Vas a seguir sufriendo con la misma comida aburrida de siempre?
-          </h2>
-          <p>
-            Cada día que pospones una alimentación equilibrada es un día más de
-            incertidumbre, de picos de azúcar inesperados y de esa sensación de
-            "castigo" cada vez que te sientas a la mesa. La diabetes no espera,
-            pero tu disfrute tampoco debería hacerlo. No permitas que una dieta
-            monótona afecte tu estado de ánimo y tu energía.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 10. ¿Cómo me beneficio más rápido? -->
-    <section class="bg-pastel">
-      <div class="container" style="text-align: center">
-        <h2>Acceso Instantáneo</h2>
-        <p>
-          Al realizar tu pago, recibirás un correo electrónico con el enlace de
-          descarga inmediata. Podrás empezar a cocinar tu primera receta
-          deliciosa en menos de 5 minutos desde ahora.
-        </p>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="bg-white">
-      <div class="container">
-        <h2 style="margin-bottom: 40px">Preguntas Frecuentes</h2>
-        <div style="max-width: 800px; margin: 0 auto">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-list">
           <div class="faq-item">
-            <h4>¿Necesito ser un experto en cocina?</h4>
+            <h4>¿Cómo recibo el material?</h4>
             <p>
-              Para nada. Las recetas están explicadas paso a paso de forma muy
-              sencilla, ideales para principiantes o personas con poco tiempo.
+              Tras confirmar tu pago, recibirás automáticamente un enlace de
+              descarga inmediata en tu correo electrónico.
             </p>
           </div>
           <div class="faq-item">
-            <h4>¿Son ingredientes caros o difíciles de conseguir?</h4>
+            <h4>¿Son ingredientes difíciles de conseguir?</h4>
             <p>
-              No. Nos enfocamos en alimentos que encuentras en cualquier
-              supermercado normal: vegetales, proteínas magras y granos
-              integrales comunes.
+              No. Nos enfocamos en comida real que encuentras en cualquier
+              supermercado normal: vegetales, proteínas magras y granos comunes.
             </p>
           </div>
           <div class="faq-item">
-            <h4>¿El formato es físico o digital?</h4>
+            <h4>¿Es un pago único?</h4>
             <p>
-              Es un Ebook digital (PDF). Puedes leerlo en tu celular, tablet,
-              computadora o incluso imprimirlo si prefieres tenerlo en papel.
+              Sí, un solo pago de $4.99 USD y el contenido es tuyo para siempre.
+              Sin suscripciones.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 12. ¿Qué debo hacer ahora? -->
+    <!-- 12. Llamado Final -->
     <section class="bg-pastel" style="text-align: center">
       <div class="container">
-        <h2>Tu viaje hacia el equilibrio comienza aquí</h2>
-        <p style="margin-bottom: 30px">
-          Haz clic en el botón de abajo, completa tu pedido seguro y empieza a
-          disfrutar de la comida nuevamente mientras cuidas tu salud.
+        <h2>Tu nueva vida comienza con el próximo bocado</h2>
+        <p
+          style="
+            margin-bottom: 40px;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-inline: auto;
+          "
+        >
+          No permitas que la diabetes dicte tu felicidad. Únete a miles de
+          personas que ya disfrutan de comer rico y sano.
         </p>
         <a
           href="https://pay.hotmart.com/A104346468O?bid=1770606654709"
-          class="btn-cta"
-          >¡SÍ, DAME MIS 100 RECETAS!</a
+          class="btn-mega"
+          >¡SÍ, QUIERO MI PACK + REGALO!</a
         >
       </div>
     </section>
 
-    <!-- 11. ¿Cómo me contacto contigo? -->
+    <!-- Footer -->
     <footer>
       <div class="container">
-        <p>
-          © 2026 Guía de Nutrición Saludable. Todos los derechos reservados.
-        </p>
-        <p style="margin-top: 10px; font-size: 0.9rem">
-          ¿Tienes dudas o problemas con la descarga? Escríbenos a:
+        <div class="brand-name">DULCE EQUILIBRIO</div>
+        <p>© 2026 Todos los derechos reservados.</p>
+        <div style="margin: 30px 0">
+          ¿Dudas o problemas? Escríbenos: <br />
           <a
             href="mailto:dulce.equilibrio13@gmail.com"
-            style="color: var(--primary-color)"
+            style="
+              color: var(--primary-soft);
+              text-decoration: none;
+              font-weight: 600;
+            "
             >dulce.equilibrio13@gmail.com</a
           >
-        </p>
-        <p style="font-size: 0.7rem; margin-top: 20px; color: #aaa">
-          Descargo de responsabilidad: Este material es informativo y no
-          sustituye el consejo médico profesional. Consulte siempre a su médico
-          antes de realizar cambios significativos en su dieta.
+        </div>
+        <p
+          style="
+            font-size: 0.75rem;
+            max-width: 650px;
+            margin: 40px auto 0;
+            opacity: 0.4;
+          "
+        >
+          AVISO MÉDICO: Este material es informativo. Siempre consulte a su
+          médico especialista antes de realizar cambios drásticos en su dieta.
         </p>
       </div>
     </footer>
@@ -624,18 +739,14 @@
         setInterval(function () {
           minutes = parseInt(timer / 60, 10);
           seconds = parseInt(timer % 60, 10);
-
           minutes = minutes < 10 ? "0" + minutes : minutes;
           seconds = seconds < 10 ? "0" + seconds : seconds;
-
           display.textContent = minutes + ":" + seconds;
-
           if (--timer < 0) {
-            timer = 0; // Se mantiene en 00:00 al terminar
+            timer = 0;
           }
         }, 1000);
       }
-
       window.onload = function () {
         var tenMinutes = 60 * 10,
           display = document.querySelector("#timer");
@@ -643,7 +754,7 @@
       };
     </script>
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel -->
     <script>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -678,6 +789,5 @@
         style="display: none"
         src="https://www.facebook.com/tr?id=683316284869422&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
   </body>
 </html>
